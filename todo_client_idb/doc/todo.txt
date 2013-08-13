@@ -1,0 +1,12 @@
+To Do
+
+- test indexed db (IndexedDB uses window from dart:html)
+
+- improve model code as a true dartisan
+
+- use dartling for the model and its action/reaction events to update IndexedDB
+
+
+
+
+
