@@ -448,9 +448,9 @@ testTodoMvc(Repo repo, String domainCode, String modelCode) {
       expect(copiedTasks.isEmpty, isFalse);
       expect(copiedTasks.length, equals(tasks.length));
       expect(copiedTasks, isNot(same(tasks)));
-      //expect(copiedTasks, equals(tasks));
-      //copiedTasks.forEach((ct) =>
-      //    expect(ct, equals(tasks.singleWhereOid(ct.oid))));
+      expect(copiedTasks, equals(tasks));
+      copiedTasks.forEach((ct) =>
+          expect(ct, equals(tasks.singleWhereOid(ct.oid))));
       copiedTasks.forEach((ct) =>
           expect(ct.oid, equals(tasks.singleWhereOid(ct.oid).oid)));
       copiedTasks.forEach((ct) =>
@@ -468,7 +468,7 @@ testTodoMvc(Repo repo, String domainCode, String modelCode) {
       var copiedTask = task.copy();
       copiedTask.display(prefix:'after copy: ');
       expect(task, isNot(same(copiedTask)));
-      //expect(task, equals(copiedTask));
+      expect(task, equals(copiedTask));
       expect(task.oid, equals(copiedTask.oid));
       expect(task.code, equals(copiedTask.code));
       expect(task.title, equals(copiedTask.title));
