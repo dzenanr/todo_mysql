@@ -27,6 +27,7 @@ Server
 Use
 
 a. in MySQL Workbench create a new schema (database) with the todo name
+
 b. run tests in test/mysql_test.dart to create tables
 
 1. run server first (todo_server_mysql/bin/server.dart or
