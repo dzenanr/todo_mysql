@@ -38,25 +38,25 @@ _integrateDataFromClient(List<Map> jsonList) {
 }
 
 start() {
-  HttpServer.bind(HOST, PORT).then((server) {
-    server.listen((HttpRequest request) {
-      switch (request.method) {
-        case "GET":
-          handleGet(request);
-          break;
-        case 'POST':
-          handlePost(request);
-          break;
-        case 'OPTIONS':
-          handleOptions(request);
-          break;
-        default: defaultHandler(request);
-      }
-    },
-    onError: print);
-    print('Listening for GET and POST on http://$HOST:$PORT');
-  },
-  onError: print);
+  HttpServer.bind(HOST, PORT)
+    .then((server) {
+      server.listen((HttpRequest request) {
+        switch (request.method) {
+          case "GET":
+            handleGet(request);
+            break;
+          case 'POST':
+            handlePost(request);
+            break;
+          case 'OPTIONS':
+            handleOptions(request);
+            break;
+          default: defaultHandler(request);
+        }
+      }, onError: (e) => print(e));
+    })
+    .catchError((e) => print(e))
+    .whenComplete(() => print('Server bound to http://$HOST:$PORT'));
 }
 
 void handleGet(HttpRequest request) {

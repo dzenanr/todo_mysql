@@ -67,10 +67,12 @@ class TaskTable {
         var task = new Task.fromDb(db.tasks.concept, taskMap);
         db.tasks.add(task);
       },
-      onDone: () {
-        completer.complete();
-        print('all tasks loaded');
-      });
+        onError: (e) => print('loading data error: $e'),
+        onDone: () {
+          completer.complete();
+          print('all tasks loaded');
+        }
+      );
     });
     return completer.future;
   }
