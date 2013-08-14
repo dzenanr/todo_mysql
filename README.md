@@ -2,7 +2,8 @@
 
 Project based on
 [Target 11: Use IndexedDB](http://www.dartlang.org/docs/tutorials/indexeddb/),
-[Using Dart with JSON Web Services](http://www.dartlang.org/articles/json-web-service/)
+[Using Dart with JSON Web Services](http://www.dartlang.org/articles/json-web-service/),
+[dartling] (https://github.com/dzenanr/dartling)
 and
 [MySQL connector for Dart ](http://pub.dartlang.org/packages/sqljocky).
 
