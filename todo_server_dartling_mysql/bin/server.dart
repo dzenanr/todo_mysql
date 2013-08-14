@@ -56,7 +56,7 @@ start() {
             break;
           default: defaultHandler(request);
         }
-      }, onError: (e) => print(e));
+      });
     })
     .catchError((e) => print(e))
     .whenComplete(() => print('Server bound to http://$HOST:$PORT'));
