@@ -5,7 +5,7 @@ Project based on
 [Using Dart with JSON Web Services](http://www.dartlang.org/articles/json-web-service/),
 [dartling] (https://github.com/dzenanr/dartling)
 and
-[MySQL connector for Dart ](http://pub.dartlang.org/packages/sqljocky).
+[SQLJocky: MySQL connector for Dart](http://pub.dartlang.org/packages/sqljocky).
 
 Client
 

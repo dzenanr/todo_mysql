@@ -48,9 +48,11 @@ class TaskTable {
         };
         var task = new Task.fromDb(taskMap);
         tasks.load(task);
+      },
+      onDone: () {
+        completer.complete();
+        print('all tasks loaded');
       });
-      completer.complete();
-      print('all tasks loaded');
     });
     return completer.future;
   }
