@@ -53,10 +53,10 @@ start() {
             break;
           default: defaultHandler(request);
         }
-      }, onError: (e) => print(e));
+      });
     })
-    .catchError((e) => print(e))
-    .whenComplete(() => print('Server bound to http://$HOST:$PORT'));
+    .catchError(print)
+    .whenComplete(() => print('Server at http://$HOST:$PORT'));
 }
 
 void handleGet(HttpRequest request) {
