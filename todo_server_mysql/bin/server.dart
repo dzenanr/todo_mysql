@@ -108,6 +108,7 @@ void handleOptions(HttpRequest request) {
 void defaultHandler(HttpRequest request) {
   HttpResponse res = request.response;
   addCorsHeaders(res);
+  print('${request.method}: ${request.uri.path}');
   res.statusCode = HttpStatus.NOT_FOUND;
   res.write('Not found: ${request.method}, ${request.uri.path}');
   res.close();

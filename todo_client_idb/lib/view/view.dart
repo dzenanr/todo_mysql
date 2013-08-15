@@ -51,7 +51,7 @@ class TasksView {
             request.status == 200) {
           String jsonString = request.responseText;
           serverResponse = 'Server: ' + request.responseText;
-          print('JSON text from the server: ${jsonString}');
+          //print('JSON text from the server: ${jsonString}');
           if (jsonString != '') {
             List<Map> jsonList = json.parse(jsonString);
             print('JSON list from the server: ${jsonList}');

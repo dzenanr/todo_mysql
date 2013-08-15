@@ -64,7 +64,7 @@ start() {
 
 void handleGet(HttpRequest request) {
   HttpResponse res = request.response;
-  //print('${request.method}: ${request.uri.path}');
+  print('${request.method}: ${request.uri.path}');
 
   addCorsHeaders(res);
   res.headers.contentType =
@@ -77,7 +77,7 @@ void handleGet(HttpRequest request) {
 }
 
 void handlePost(HttpRequest request) {
-  //print('${request.method}: ${request.uri.path}');
+  print('${request.method}: ${request.uri.path}');
   request.listen((List<int> buffer) {
     var jsonString = new String.fromCharCodes(buffer);
     List<Map> jsonList = json.parse(jsonString);
@@ -111,6 +111,7 @@ void handleOptions(HttpRequest request) {
 void defaultHandler(HttpRequest request) {
   HttpResponse res = request.response;
   addCorsHeaders(res);
+  print('${request.method}: ${request.uri.path}');
   res.statusCode = HttpStatus.NOT_FOUND;
   res.write('Not found: ${request.method}, ${request.uri.path}');
   res.close();
