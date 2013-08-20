@@ -34,7 +34,7 @@ Use
 4. run server first (todo_server_mysql/bin/server.dart or
    todo_server_dartling_mysql/bin/server.dart) in Dart Editor;
    it runs when you see in the server.dart tab in Dart Editor:
-   Listening for GET and POST on http://127.0.0.1:8080;
+   Server at http://127.0.0.1:8080;
    if it does not run, use Run/Manage Launches
 5. run client (todo_client_idb/web/app.html) in Dartium
 6. run client as JavaScript (todo_client_idb/web/app.html) in Chrome
