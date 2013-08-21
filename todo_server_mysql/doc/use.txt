@@ -22,18 +22,3 @@ Use
    5.1 From server to integrate server data locally
    5.2 add, remove and update tasks (saved locally in IndexedDB by default)
    5.3 To server to integrate local data to server
-
-
-
-
-run server first (todo_server_mysql/bin/server.dart or todo_server_dartling_mysql/bin/server.dart) in Dart Editor; it runs when you see in the server.dart tab in Dart Editor: Server at http://127.0.0.1:8080; if it does not run, use Run/Manage Launches
-run client (todo_client_idb/web/app.html) in Dartium
-run client as JavaScript (todo_client_idb/web/app.html) in Chrome
-use the client app in Dartium:
-From server to integrate server data locally
-add, remove and update tasks (saved locally in IndexedDB by default)
-To server to integrate local data to server
-use the client app in Chrome:
-From server to integrate server data locally
-add, remove and update tasks (saved locally in IndexedDB by default)
-To server to integrate local data to server
