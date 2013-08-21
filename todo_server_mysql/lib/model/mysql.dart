@@ -73,7 +73,7 @@ class TaskTable {
     }).then((_) {
       print("executed query insert into task");
       completer.complete();
-    });
+    }).catchError(print);
     return completer.future;
   }
 
@@ -91,7 +91,7 @@ class TaskTable {
     }).then((_) {
       print("executed query update task");
       completer.complete();
-    });
+    }).catchError(print);
     return completer.future;
   }
 
@@ -107,7 +107,7 @@ class TaskTable {
     }).then((_) {
       print("executed query delete from task");
       completer.complete();
-    });
+    }).catchError(print);
     return completer.future;
   }
 }

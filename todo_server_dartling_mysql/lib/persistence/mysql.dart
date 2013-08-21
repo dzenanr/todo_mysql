@@ -37,11 +37,11 @@ class TodoDb implements ActionReactionApi {
 
   react(ActionApi action) {
     if (action is AddAction) {
-      taskTable.insert(action.entity);
+      taskTable.insert((action as AddAction).entity);
     } else if (action is RemoveAction) {
-      taskTable.delete(action.entity);
+      taskTable.delete((action as RemoveAction).entity);
     } else if (action is SetAttributeAction) {
-      taskTable.update(action.entity);
+      taskTable.update((action as SetAttributeAction).entity);
     }
   }
 }
