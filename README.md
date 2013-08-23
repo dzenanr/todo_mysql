@@ -27,22 +27,23 @@ Server
 
 Use
 
-1. in MySQL Workbench create a new schema (database) with the todo name
-2. run tests in test/mysql_test.dart to create tables
-3. put a path to the project folder in the working directory field in
+1. do not forget to start the MySQL server
+2. in MySQL Workbench create a new schema (database) with the todo name
+3. run tests in test/mysql_test.dart to create tables
+4. put a path to the project folder in the working directory field in
    Run/Manage Launches (in order to have access to the connection.options file).
-4. run server first (todo_server_mysql/bin/server.dart or
+5. run server (todo_server_mysql/bin/server.dart or
    todo_server_dartling_mysql/bin/server.dart) in Dart Editor;
    it runs when you see in the server.dart tab in Dart Editor:
    Server at http://127.0.0.1:8080;
    if it does not run, use Run/Manage Launches
-5. run client (todo_client_idb/web/app.html) in Dartium
-6. run client as JavaScript (todo_client_idb/web/app.html) in Chrome
-7. use the client app in Dartium:
+6. run client (todo_client_idb/web/app.html) in Dartium
+7. run client as JavaScript (todo_client_idb/web/app.html) in Chrome
+8. use the client app in Dartium:
    1. From server to integrate server data locally
    2. add, remove and update tasks (saved locally in IndexedDB by default)
    3. To server to integrate local data to server
-8. use the client app in Chrome:
+9. use the client app in Chrome:
    1. From server to integrate server data locally
    2. add, remove and update tasks (saved locally in IndexedDB by default)
    3. To server to integrate local data to server

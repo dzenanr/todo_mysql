@@ -9,7 +9,7 @@ Use
 2. run tests in test/mysql_test.dart to create tables
 3. put a path to the project folder in the working directory field in
    Run/Manage Launches (in order to have access to the connection.options file).
-4. run server first (bin/server.dart) in Dart Editor;
+4. run server (bin/server.dart) in Dart Editor;
    it runs when you see in the server.dart tab in Dart Editor:
    Server at http://127.0.0.1:8080;
    if it does not run, use Run/Manage Launches
