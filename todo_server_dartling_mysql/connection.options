@@ -1,7 +1,7 @@
 # connection.options to define how to connect to a mysql db
 user=root
 #ubuntu: drdr; windows: tata
-password=dr
+password=di2911da
 #defaults to 3306
 port=3306
 db=todo

@@ -3,7 +3,7 @@ library todo_client_idb;
 import 'dart:async';
 import 'dart:html';
 import 'dart:indexed_db';
-import 'dart:json' as json;
+import 'dart:convert';
 
 part 'model/idb.dart';
 part 'model/model.dart';
