@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'dart:convert';
+import 'dart:convert' as convert;
 
 import 'package:dartling/dartling.dart';
 import 'package:todo_server_dartling_mysql/todo_mvc.dart';
@@ -70,7 +70,7 @@ void handleGet(HttpRequest request) {
   res.headers.contentType =
       new ContentType("application", "json", charset: 'utf-8');
   List<Map> jsonList = db.tasks.toJson();
-  String jsonString = JSON.encode(jsonList);
+  String jsonString = convert.JSON.encode(jsonList);
   //print('JSON list in GET: ${jsonList}');
   res.write(jsonString);
   res.close();
@@ -80,7 +80,7 @@ void handlePost(HttpRequest request) {
   print('${request.method}: ${request.uri.path}');
   request.listen((List<int> buffer) {
     var jsonString = new String.fromCharCodes(buffer);
-    List<Map> jsonList = JSON.decode(jsonString);
+    List<Map> jsonList = convert.JSON.decode(jsonString);
     //print('JSON list in POST: ${jsonList}');
     _integrateDataFromClient(jsonList);
   },
