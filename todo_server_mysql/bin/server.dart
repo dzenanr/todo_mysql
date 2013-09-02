@@ -118,7 +118,7 @@ void main() {
   var todoDb = new TodoDb();
   todoDb.open().then((_) {
     taskTable = todoDb.taskTable;
-    start();
+    start(); // start webserver
   });
 }
 

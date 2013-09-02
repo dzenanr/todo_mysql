@@ -65,7 +65,7 @@ class TaskTable {
     _pool.prepare(
       'insert into task (title, completed, updated) values (?, ?, ?)'
     ).then((query) {
-      print("prepared query insert into task");
+      print('prepared query insert into task');
       query[0] = taskMap['title'];;
       query[1] = taskMap['completed'];
       query[2] = taskMap['updated'];
@@ -83,7 +83,7 @@ class TaskTable {
     _pool.prepare(
       'update task set completed = ?, updated = ? where title = ?'
     ).then((query) {
-      print("prepared query update task");
+      print('prepared query update task');
       query[0] = taskMap['completed'];
       query[1] = taskMap['updated'];
       query[2] = taskMap['title'];
@@ -101,7 +101,7 @@ class TaskTable {
     _pool.prepare(
       'delete from task where title = ?'
     ).then((query) {
-      print("prepared query delete from task");
+      print('prepared query delete from task');
       query[0] = taskMap['title'];;
       return query.execute();
     }).then((_) {
