@@ -11,7 +11,7 @@ import 'package:todo_server_dartling_mysql/todo_mvc.dart';
  */
 
 const String HOST = "127.0.0.1"; // eg: localhost
-const int PORT = 8080;
+const int PORT = 8089;
 
 TodoDb db;
 
