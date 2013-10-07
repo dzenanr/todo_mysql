@@ -11,9 +11,11 @@ testTasks(ConnectionPool pool) {
         'select t.title, t.completed, t.updated '
         'from task t '
       ).then((rows) {
+        var count = 0;
         print('selected all tasks');
         rows.stream.listen((row) {
           print(
+            'count: ${++count} - '
             'title: ${row[0]}, '
             'completed: ${row[1]}, '
             'updated: ${row[2]}'
@@ -30,6 +32,7 @@ testTasks(ConnectionPool pool) {
       ).then((rows) {
         print('selected completed tasks');
         rows.stream.listen((row) {
+          expect(row[1], equals(1));
           print(
             'title: ${row[0]}, '
             'completed: ${row[1]}, '

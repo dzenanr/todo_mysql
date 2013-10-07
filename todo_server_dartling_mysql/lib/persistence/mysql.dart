@@ -84,10 +84,11 @@ class TaskTable {
       'insert into task (title, completed, updated) values (?, ?, ?)'
     ).then((query) {
       //print('prepared query insert into task: ${task.title}');
-      query[0] = taskMap['title'];;
-      query[1] = taskMap['completed'];
-      query[2] = taskMap['updated'];
-      return query.execute();
+      var params = new List();
+      params.add(taskMap['title']);
+      params.add(taskMap['completed']);
+      params.add(taskMap['updated']);
+      return query.execute(params);
     }).then((_) {
       print('executed query insert into task: ${task.title}');
       completer.complete();
@@ -102,8 +103,9 @@ class TaskTable {
       'delete from task where title = ?'
     ).then((query) {
       //print('prepared query delete from task: ${task.title}');
-      query[0] = taskMap['title'];;
-      return query.execute();
+      var params = new List();
+      params.add(taskMap['title']);
+      return query.execute(params);
     }).then((_) {
       print('executed query delete from task: ${task.title}');
       completer.complete();
@@ -118,10 +120,11 @@ class TaskTable {
       'update task set completed = ?, updated = ? where title = ?'
     ).then((query) {
       //print('prepared query update task: ${task.title}');
-      query[0] = taskMap['completed'];
-      query[1] = taskMap['updated'];
-      query[2] = taskMap['title'];
-      return query.execute();
+      var params = new List();
+      params.add(taskMap['completed']);
+      params.add(taskMap['updated']);
+      params.add(taskMap['title']);
+      return query.execute(params);
     }).then((_) {
       print('executed query update task: ${task.title}');
       completer.complete();
