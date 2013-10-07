@@ -66,7 +66,7 @@ class TaskTable {
       'insert into task (title, completed, updated) values (?, ?, ?)'
     ).then((query) {
       print('prepared query insert into task');
-      query[0] = taskMap['title'];;
+      query[0] = taskMap['title'];
       query[1] = taskMap['completed'];
       query[2] = taskMap['updated'];
       return query.execute();
@@ -102,7 +102,7 @@ class TaskTable {
       'delete from task where title = ?'
     ).then((query) {
       print('prepared query delete from task');
-      query[0] = taskMap['title'];;
+      query[0] = taskMap['title'];
       return query.execute();
     }).then((_) {
       print("executed query delete from task");
