@@ -3,14 +3,14 @@ part of todo_client_idb;
 class TasksView {
   TasksStore _tasksStore;
 
-  InputElement _completeAllTasks = query('#complete-all-tasks');
-  Element _taskElements = query('#task-list');
-  Element _footer = query('.footer');
-  Element _activeTasksCount = query('#active-tasks-count');
-  Element _allElements = query('#filter a[href="#/"]');
-  Element _activeElements = query('#filter a[href="#/active"]');
-  Element _completedElements = query('#filter a[href="#/completed"]');
-  ButtonElement _clearCompletedTasks = query('#clear-completed-tasks');
+  InputElement _completeAllTasks = querySelector('#complete-all-tasks');
+  Element _taskElements = querySelector('#task-list');
+  Element _footer = querySelector('.footer');
+  Element _activeTasksCount = querySelector('#active-tasks-count');
+  Element _allElements = querySelector('#filter a[href="#/"]');
+  Element _activeElements = querySelector('#filter a[href="#/active"]');
+  Element _completedElements = querySelector('#filter a[href="#/completed"]');
+  ButtonElement _clearCompletedTasks = querySelector('#clear-completed-tasks');
 
   String serverResponse = '';
 
@@ -24,7 +24,7 @@ class TasksView {
       _updateFilter();
     });
 
-    ButtonElement toServer = query('#to-server');
+    ButtonElement toServer = querySelector('#to-server');
     toServer.onClick.listen((MouseEvent e) {
       var request = new HttpRequest();
       request.onReadyStateChange.listen((_) {
@@ -43,7 +43,7 @@ class TasksView {
       request.send(_tasksStore.tasks.toJsonString());
     });
 
-    ButtonElement fromServer = query('#from-server');
+    ButtonElement fromServer = querySelector('#from-server');
     fromServer.onClick.listen((MouseEvent e) {
       var request = new HttpRequest();
       request.onReadyStateChange.listen((_) {
@@ -77,7 +77,7 @@ class TasksView {
       request.send('update-me');
     });
 
-    InputElement newTask = query('#new-task');
+    InputElement newTask = querySelector('#new-task');
     newTask.onKeyPress.listen((KeyboardEvent e) {
       if (e.keyCode == KeyCode.ENTER) {
         var title = newTask.value.trim();
@@ -120,8 +120,8 @@ class TasksView {
   _addElement(Task task) {
     var taskElement = _newElement(task);
 
-    Element title = taskElement.query('.task-title');
-    InputElement editTitle = taskElement.query('.edit-title');
+    Element title = taskElement.querySelector('.task-title');
+    InputElement editTitle = taskElement.querySelector('.edit-title');
     editTitle.hidden = true;
     title.onDoubleClick.listen((MouseEvent e) {
       title.hidden = true;
@@ -150,7 +150,7 @@ class TasksView {
       }
     });
 
-    taskElement.query('.remove-task').onClick.listen((MouseEvent e) {
+    taskElement.querySelector('.remove-task').onClick.listen((MouseEvent e) {
       _tasksStore.remove(task)
         .then((_) {
           _taskElements.nodes.remove(taskElement);
@@ -158,7 +158,7 @@ class TasksView {
         });
     });
 
-    taskElement.query('.task-completed').onClick.listen((MouseEvent e) {
+    taskElement.querySelector('.task-completed').onClick.listen((MouseEvent e) {
       task.completed = !task.completed;
       task.updated = new DateTime.now();
       _tasksStore.update(task);
