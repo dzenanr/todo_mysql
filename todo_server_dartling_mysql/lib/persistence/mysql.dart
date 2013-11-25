@@ -37,11 +37,11 @@ class TodoDb implements ActionReactionApi {
 
   react(ActionApi action) {
     if (action is AddAction) {
-      taskTable.insert((action as AddAction).entity);
+      taskTable.insert(action.entity);
     } else if (action is RemoveAction) {
-      taskTable.delete((action as RemoveAction).entity);
+      taskTable.delete(action.entity);
     } else if (action is SetAttributeAction) {
-      taskTable.update((action as SetAttributeAction).entity);
+      taskTable.update(action.entity);
     }
   }
 }
@@ -58,7 +58,7 @@ class TaskTable {
       'from task t '
     ).then((rows) {
       var taskMap;
-      rows.stream.listen((row) {
+      rows.listen((row) {
         taskMap = {
           'title'    : '${row[0]}',
           'completed': '${row[1]}',

@@ -40,7 +40,7 @@ class TaskTable {
       'from task t '
     ).then((rows) {
       var taskMap;
-      rows.stream.listen((row) {
+      rows.listen((row) {
         taskMap = {
           'title'    : '${row[0]}',
           'completed': '${row[1]}',
