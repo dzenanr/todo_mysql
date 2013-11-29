@@ -29,8 +29,9 @@ Use
 
 1. do not forget to start the MySQL server
 2. in MySQL Workbench create a new schema (empty database) with the todo name
-3. put a path to the project folder in the working directory field in
-   Run/Manage Launches (in order to have access to the connection.options file).
+3. put a path to the project folder (todo_server_mysql or todo_server_dartling_mysql)
+   in the working directory field in Run/Manage Launches
+   (in order to have access to the connection.options file).
 4. run tests in test/mysql_test.dart to create tables
 5. run server (todo_server_mysql/bin/server.dart or
    todo_server_dartling_mysql/bin/server.dart) in Dart Editor;
