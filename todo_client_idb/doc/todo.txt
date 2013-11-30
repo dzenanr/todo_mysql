@@ -6,6 +6,25 @@ To Do
 
 - use dartling for the model and its action/reaction events to update IndexedDB
 
+- todo_client_idb.lib.model.idb
+    _integrateDataFromServer method:
+      if (clientTasks.contains(serverTask.title)) {
+        var clientTask = clientTasks.find(serverTask.title);
+        clientTask.completed = serverTask.completed;
+        clientTask.updated = serverTask.updated;
+      }
+  removed condition that the server updated value must be newer than the client updated
+      if (clientTasks.contains(serverTask.title)) {
+        var clientTask = clientTasks.find(serverTask.title);
+        if (clientTask.updated.millisecondsSinceEpoch <
+            serverTask.updated.millisecondsSinceEpoch) {
+          clientTask.completed = serverTask.completed;
+          clientTask.updated = serverTask.updated;
+        }
+      }
+
+  with the condition task update does not work properly in a dartling version
+  only (to debug why?)
 
 
 
