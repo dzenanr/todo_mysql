@@ -5,5 +5,5 @@ description: To learn how to use MySQL and client-server communication.
 homepage: http://ondart.me/
 dependencies:
   dartling:
-    git: 'https://github.com/dzenanr/dartling.git'
+    git: git://github.com/dzenanr/dartling.git
   sqljocky: any
