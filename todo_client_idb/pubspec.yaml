@@ -1,5 +1,5 @@
 name: todo_client_idb
-version: 0.0.1
+version: 0.0.2
 author: Dzenan Ridjanovic <dzenanr@gmail.com>
 description: To learn how to use IndexedDB and client-server communication.
 homepage: http://ondart.me/

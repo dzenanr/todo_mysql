@@ -4,9 +4,12 @@ part of todo_mvc;
 
 abstract class TaskGen extends ConceptEntity<Task> {
 
-  TaskGen(Concept concept) : super.of(concept);
+  TaskGen(Concept concept) {
+    this.concept = concept;
+  }
 
-  TaskGen.withId(Concept concept, String title) : super.of(concept) {
+  TaskGen.withId(Concept concept, String title) {
+    this.concept = concept;
     setAttribute("title", title);
   }
 
@@ -30,7 +33,9 @@ abstract class TaskGen extends ConceptEntity<Task> {
 
 abstract class TasksGen extends Entities<Task> {
 
-  TasksGen(Concept concept) : super.of(concept);
+  TasksGen(Concept concept) {
+    this.concept = concept;
+  }
 
   Tasks newEntities() => new Tasks(concept);
   Task newEntity() => new Task(concept);
