@@ -1,5 +1,5 @@
 name: todo_server_mysql
-version: 0.0.2
+version: 2.0.1
 author: Dzenan Ridjanovic <dzenanr@gmail.com>
 description: To learn how to use MySQL and client-server communication.
 homepage: http://ondart.me/
